@@ -1,0 +1,168 @@
+\begin{theindex}
+
+  \item {acc\_t}, \hyperpage{5}
+  \item {ACCGYRO}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {ACCMAG}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {ACCONLY}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {AMG}
+    \subitem {imu.h}, \hyperpage{23}
+
+  \indexspace
+
+  \item {calib\_t}, \hyperpage{5}
+  \item {COMPASS}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {CONFIG}
+    \subitem {imu.h}, \hyperpage{23}
+
+  \indexspace
+
+  \item {GYROONLY}
+    \subitem {imu.h}, \hyperpage{23}
+
+  \indexspace
+
+  \item {heading}
+    \subitem {mag\_t}, \hyperpage{7}
+
+  \indexspace
+
+  \item {i2c.c}, \hyperpage{9}
+    \subitem {i2c\_init}, \hyperpage{9}
+    \subitem {i2c\_recByte}, \hyperpage{10}
+    \subitem {i2c\_recBytes}, \hyperpage{10}
+    \subitem {i2c\_requestByte}, \hyperpage{10}
+    \subitem {i2c\_sendByte}, \hyperpage{12}
+    \subitem {i2c\_sendBytes}, \hyperpage{12}
+  \item {i2c.h}, \hyperpage{13}
+    \subitem {i2c\_init}, \hyperpage{13}
+    \subitem {i2c\_recByte}, \hyperpage{13}
+    \subitem {i2c\_recBytes}, \hyperpage{14}
+    \subitem {i2c\_requestByte}, \hyperpage{14}
+    \subitem {i2c\_sendByte}, \hyperpage{14}
+    \subitem {i2c\_sendBytes}, \hyperpage{15}
+  \item {i2c\_init}
+    \subitem {i2c.c}, \hyperpage{9}
+    \subitem {i2c.h}, \hyperpage{13}
+  \item {i2c\_recByte}
+    \subitem {i2c.c}, \hyperpage{10}
+    \subitem {i2c.h}, \hyperpage{13}
+  \item {i2c\_recBytes}
+    \subitem {i2c.c}, \hyperpage{10}
+    \subitem {i2c.h}, \hyperpage{14}
+  \item {i2c\_requestByte}
+    \subitem {i2c.c}, \hyperpage{10}
+    \subitem {i2c.h}, \hyperpage{14}
+  \item {i2c\_sendByte}
+    \subitem {i2c.c}, \hyperpage{12}
+    \subitem {i2c.h}, \hyperpage{14}
+  \item {i2c\_sendBytes}
+    \subitem {i2c.c}, \hyperpage{12}
+    \subitem {i2c.h}, \hyperpage{15}
+  \item {IMU}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {imu.c}, \hyperpage{15}
+    \subitem {imu\_connected}, \hyperpage{16}
+    \subitem {imu\_getAcc}, \hyperpage{16}
+    \subitem {imu\_getChipInfo}, \hyperpage{17}
+    \subitem {imu\_getMag}, \hyperpage{17}
+    \subitem {imu\_getStatus}, \hyperpage{17}
+    \subitem {imu\_getTemp}, \hyperpage{17}
+    \subitem {imu\_readRegByte}, \hyperpage{18}
+    \subitem {imu\_readRegBytes}, \hyperpage{19}
+    \subitem {imu\_reset}, \hyperpage{19}
+    \subitem {imu\_setDefaultUnits}, \hyperpage{19}
+    \subitem {imu\_setMode}, \hyperpage{19}
+    \subitem {imu\_writeReg}, \hyperpage{20}
+  \item {imu.h}, \hyperpage{20}
+    \subitem {ACCGYRO}, \hyperpage{23}
+    \subitem {ACCMAG}, \hyperpage{23}
+    \subitem {ACCONLY}, \hyperpage{23}
+    \subitem {AMG}, \hyperpage{23}
+    \subitem {COMPASS}, \hyperpage{23}
+    \subitem {CONFIG}, \hyperpage{23}
+    \subitem {GYROONLY}, \hyperpage{23}
+    \subitem {IMU}, \hyperpage{23}
+    \subitem {imu\_connected}, \hyperpage{23}
+    \subitem {imu\_getAcc}, \hyperpage{23}
+    \subitem {imu\_getChipInfo}, \hyperpage{23}
+    \subitem {imu\_getLinAcc}, \hyperpage{24}
+    \subitem {imu\_getMag}, \hyperpage{24}
+    \subitem {imu\_getStatus}, \hyperpage{24}
+    \subitem {imu\_getTemp}, \hyperpage{24}
+    \subitem {imu\_mode\_t}, \hyperpage{23}
+    \subitem {imu\_readRegByte}, \hyperpage{25}
+    \subitem {imu\_readRegBytes}, \hyperpage{25}
+    \subitem {imu\_reset}, \hyperpage{25}
+    \subitem {imu\_setDefaultUnits}, \hyperpage{26}
+    \subitem {imu\_setMode}, \hyperpage{26}
+    \subitem {imu\_writeReg}, \hyperpage{26}
+    \subitem {M4G}, \hyperpage{23}
+    \subitem {MAGGYRO}, \hyperpage{23}
+    \subitem {MAGONLY}, \hyperpage{23}
+    \subitem {NDOF}, \hyperpage{23}
+    \subitem {NDOF\_FMC\_OFF}, \hyperpage{23}
+  \item {imu\_connected}
+    \subitem {imu.c}, \hyperpage{16}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {imu\_getAcc}
+    \subitem {imu.c}, \hyperpage{16}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {imu\_getChipInfo}
+    \subitem {imu.c}, \hyperpage{17}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {imu\_getLinAcc}
+    \subitem {imu.h}, \hyperpage{24}
+  \item {imu\_getMag}
+    \subitem {imu.c}, \hyperpage{17}
+    \subitem {imu.h}, \hyperpage{24}
+  \item {imu\_getStatus}
+    \subitem {imu.c}, \hyperpage{17}
+    \subitem {imu.h}, \hyperpage{24}
+  \item {imu\_getTemp}
+    \subitem {imu.c}, \hyperpage{17}
+    \subitem {imu.h}, \hyperpage{24}
+  \item {imu\_info\_t}, \hyperpage{6}
+  \item {imu\_mode\_t}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {imu\_readRegByte}
+    \subitem {imu.c}, \hyperpage{18}
+    \subitem {imu.h}, \hyperpage{25}
+  \item {imu\_readRegBytes}
+    \subitem {imu.c}, \hyperpage{19}
+    \subitem {imu.h}, \hyperpage{25}
+  \item {imu\_reset}
+    \subitem {imu.c}, \hyperpage{19}
+    \subitem {imu.h}, \hyperpage{25}
+  \item {imu\_setDefaultUnits}
+    \subitem {imu.c}, \hyperpage{19}
+    \subitem {imu.h}, \hyperpage{26}
+  \item {imu\_setMode}
+    \subitem {imu.c}, \hyperpage{19}
+    \subitem {imu.h}, \hyperpage{26}
+  \item {imu\_writeReg}
+    \subitem {imu.c}, \hyperpage{20}
+    \subitem {imu.h}, \hyperpage{26}
+
+  \indexspace
+
+  \item {M4G}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {mag\_t}, \hyperpage{7}
+    \subitem {heading}, \hyperpage{7}
+  \item {MAGGYRO}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {MAGONLY}
+    \subitem {imu.h}, \hyperpage{23}
+
+  \indexspace
+
+  \item {NDOF}
+    \subitem {imu.h}, \hyperpage{23}
+  \item {NDOF\_FMC\_OFF}
+    \subitem {imu.h}, \hyperpage{23}
+
+\end{theindex}

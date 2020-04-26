@@ -1,0 +1,219 @@
+\hypertarget{imu_8c}{}\doxysection{imu.\+c File Reference}
+\label{imu_8c}\index{imu.c@{imu.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{imu_8c_aee92580b45484a763ef6f507ed59e31a}\label{imu_8c_aee92580b45484a763ef6f507ed59e31a}} 
+void \mbox{\hyperlink{imu_8c_aee92580b45484a763ef6f507ed59e31a}{imu\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize I\+MU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{imu_8c_a9e418a865ebc5f15c9025ba0ce4d7dc8}{imu\+\_\+set\+Mode}} (\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}{imu\+\_\+mode\+\_\+t}} mode)
+\begin{DoxyCompactList}\small\item\em sets the mode of the I\+MU. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{imu_8c_acecc64aa07ccfda34cf2b4cbb817a3b7}\label{imu_8c_acecc64aa07ccfda34cf2b4cbb817a3b7}} 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}{imu\+\_\+mode\+\_\+t}} {\bfseries imu\+\_\+get\+Mode} ()
+\item 
+\mbox{\hyperlink{structmag__t}{mag\+\_\+t}} $\ast$ \mbox{\hyperlink{imu_8c_a017157849284abfa5ff0f9fe40027707}{imu\+\_\+get\+Mag}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current magnetometer data from the I\+MU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structacc__t}{acc\+\_\+t}} $\ast$ \mbox{\hyperlink{imu_8c_aa5173c4d1e1cddae34fb3306a72c8548}{imu\+\_\+get\+Acc}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current acceleration data from the I\+MU. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{imu_8c_a58292bbc37706a4036dbc14efa9a39db}\label{imu_8c_a58292bbc37706a4036dbc14efa9a39db}} 
+\mbox{\hyperlink{structacc__t}{acc\+\_\+t}} $\ast$ {\bfseries imu\+\_\+get\+Lin\+Acc} ()
+\item 
+void \mbox{\hyperlink{imu_8c_a4a977f192aab1c6b5c027772419da374}{imu\+\_\+set\+Default\+Units}} ()
+\begin{DoxyCompactList}\small\item\em Sets the default units. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{imu_8c_a399198eab0d0118f45bbc8d567108712}{imu\+\_\+connected}} ()
+\begin{DoxyCompactList}\small\item\em Check if I\+MU is connected. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{imu_8c_a5c9e4e3587441237a9eb498bfadd8268}{imu\+\_\+get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current status from the I\+MU. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{imu_8c_ae459244d8949fab63ff4ede3f0dc6ce1}{imu\+\_\+get\+Temp}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current temperature reading from I\+MU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structimu__info__t}{imu\+\_\+info\+\_\+t}} $\ast$ \mbox{\hyperlink{imu_8c_aa08ef177146dc603e69ec3ca112d0b04}{imu\+\_\+get\+Chip\+Info}} ()
+\begin{DoxyCompactList}\small\item\em gets the current Chip Info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{imu_8c_af3fcba203f7a3d7d2940218e576f098b}{imu\+\_\+reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the I\+MU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{imu_8c_ae65086c0f29bb41fe43bf35cab4b5d31}{imu\+\_\+write\+Reg}} (uint8\+\_\+t reg\+Addr, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Writes to a specified register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{imu_8c_a1773be493dae6003e8f7396f10b73fc2}{imu\+\_\+read\+Reg\+Byte}} (uint8\+\_\+t reg\+Addr)
+\begin{DoxyCompactList}\small\item\em Reads a byte from the I\+MU. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{imu_8c_aae7e5e330135b1a750ef474f7bbf6ef1}{imu\+\_\+read\+Reg\+Bytes}} (uint8\+\_\+t reg\+Addr, size\+\_\+t data\+Len)
+\begin{DoxyCompactList}\small\item\em Reads a multiple bytes from the I\+MU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver for B\+N\+O055 I\+MU.
+
+\begin{DoxyAuthor}{Author}
+Braedon Giblin \href{mailto:bgiblin@iastate.edu}{\texttt{ bgiblin@iastate.\+edu}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{imu_8c_a399198eab0d0118f45bbc8d567108712}\label{imu_8c_a399198eab0d0118f45bbc8d567108712}} 
+\index{imu.c@{imu.c}!imu\_connected@{imu\_connected}}
+\index{imu\_connected@{imu\_connected}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_connected()}{imu\_connected()}}
+{\footnotesize\ttfamily bool imu\+\_\+connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if I\+MU is connected. 
+
+\begin{DoxyReturn}{Returns}
+True if connected, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_aa5173c4d1e1cddae34fb3306a72c8548}\label{imu_8c_aa5173c4d1e1cddae34fb3306a72c8548}} 
+\index{imu.c@{imu.c}!imu\_getAcc@{imu\_getAcc}}
+\index{imu\_getAcc@{imu\_getAcc}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_getAcc()}{imu\_getAcc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structacc__t}{acc\+\_\+t}}$\ast$ imu\+\_\+get\+Acc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current acceleration data from the I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+Accelerometer data packet 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_aa08ef177146dc603e69ec3ca112d0b04}\label{imu_8c_aa08ef177146dc603e69ec3ca112d0b04}} 
+\index{imu.c@{imu.c}!imu\_getChipInfo@{imu\_getChipInfo}}
+\index{imu\_getChipInfo@{imu\_getChipInfo}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_getChipInfo()}{imu\_getChipInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structimu__info__t}{imu\+\_\+info\+\_\+t}}$\ast$ imu\+\_\+get\+Chip\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the current Chip Info. 
+
+\begin{DoxyReturn}{Returns}
+Chip info packet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_a017157849284abfa5ff0f9fe40027707}\label{imu_8c_a017157849284abfa5ff0f9fe40027707}} 
+\index{imu.c@{imu.c}!imu\_getMag@{imu\_getMag}}
+\index{imu\_getMag@{imu\_getMag}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_getMag()}{imu\_getMag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmag__t}{mag\+\_\+t}}$\ast$ imu\+\_\+get\+Mag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current magnetometer data from the I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+Magnetometer data packet 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_a5c9e4e3587441237a9eb498bfadd8268}\label{imu_8c_a5c9e4e3587441237a9eb498bfadd8268}} 
+\index{imu.c@{imu.c}!imu\_getStatus@{imu\_getStatus}}
+\index{imu\_getStatus@{imu\_getStatus}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_getStatus()}{imu\_getStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current status from the I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+status. See data sheet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_ae459244d8949fab63ff4ede3f0dc6ce1}\label{imu_8c_ae459244d8949fab63ff4ede3f0dc6ce1}} 
+\index{imu.c@{imu.c}!imu\_getTemp@{imu\_getTemp}}
+\index{imu\_getTemp@{imu\_getTemp}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_getTemp()}{imu\_getTemp()}}
+{\footnotesize\ttfamily int imu\+\_\+get\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current temperature reading from I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+Temperature in specified units (default fahrenheit) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_a1773be493dae6003e8f7396f10b73fc2}\label{imu_8c_a1773be493dae6003e8f7396f10b73fc2}} 
+\index{imu.c@{imu.c}!imu\_readRegByte@{imu\_readRegByte}}
+\index{imu\_readRegByte@{imu\_readRegByte}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_readRegByte()}{imu\_readRegByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+read\+Reg\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr }\end{DoxyParamCaption})}
+
+
+
+Reads a byte from the I\+MU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Address to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Byte read 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_aae7e5e330135b1a750ef474f7bbf6ef1}\label{imu_8c_aae7e5e330135b1a750ef474f7bbf6ef1}} 
+\index{imu.c@{imu.c}!imu\_readRegBytes@{imu\_readRegBytes}}
+\index{imu\_readRegBytes@{imu\_readRegBytes}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_readRegBytes()}{imu\_readRegBytes()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ imu\+\_\+read\+Reg\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr,  }\item[{size\+\_\+t}]{data\+Len }\end{DoxyParamCaption})}
+
+
+
+Reads a multiple bytes from the I\+MU. 
+
+{\bfseries{N\+O\+TE}} This allocates memory. Allocated array {\bfseries{M\+U\+ST}} be freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Address to begin read from \\
+\hline
+{\em data\+Len} & Number of bytes to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Byte array of bytes read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8c_af3fcba203f7a3d7d2940218e576f098b}\label{imu_8c_af3fcba203f7a3d7d2940218e576f098b}} 
+\index{imu.c@{imu.c}!imu\_reset@{imu\_reset}}
+\index{imu\_reset@{imu\_reset}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_reset()}{imu\_reset()}}
+{\footnotesize\ttfamily void imu\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the I\+MU. 
+
+Poll connected to wait until connected. \mbox{\Hypertarget{imu_8c_a4a977f192aab1c6b5c027772419da374}\label{imu_8c_a4a977f192aab1c6b5c027772419da374}} 
+\index{imu.c@{imu.c}!imu\_setDefaultUnits@{imu\_setDefaultUnits}}
+\index{imu\_setDefaultUnits@{imu\_setDefaultUnits}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_setDefaultUnits()}{imu\_setDefaultUnits()}}
+{\footnotesize\ttfamily void imu\+\_\+set\+Default\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the default units. 
+
+Default units are -\/ M/s$^\wedge$2, degrees, fahrenheit \mbox{\Hypertarget{imu_8c_a9e418a865ebc5f15c9025ba0ce4d7dc8}\label{imu_8c_a9e418a865ebc5f15c9025ba0ce4d7dc8}} 
+\index{imu.c@{imu.c}!imu\_setMode@{imu\_setMode}}
+\index{imu\_setMode@{imu\_setMode}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_setMode()}{imu\_setMode()}}
+{\footnotesize\ttfamily void imu\+\_\+set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}{imu\+\_\+mode\+\_\+t}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+sets the mode of the I\+MU. 
+
+See imu\+\_\+mode\+\_\+t struct for different modes. \mbox{\Hypertarget{imu_8c_ae65086c0f29bb41fe43bf35cab4b5d31}\label{imu_8c_ae65086c0f29bb41fe43bf35cab4b5d31}} 
+\index{imu.c@{imu.c}!imu\_writeReg@{imu\_writeReg}}
+\index{imu\_writeReg@{imu\_writeReg}!imu.c@{imu.c}}
+\doxysubsubsection{\texorpdfstring{imu\_writeReg()}{imu\_writeReg()}}
+{\footnotesize\ttfamily void imu\+\_\+write\+Reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Writes to a specified register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Register address to write \\
+\hline
+{\em val} & Value to write \\
+\hline
+\end{DoxyParams}

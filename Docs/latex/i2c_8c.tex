@@ -1,0 +1,143 @@
+\hypertarget{i2c_8c}{}\doxysection{i2c.\+c File Reference}
+\label{i2c_8c}\index{i2c.c@{i2c.c}}
+{\ttfamily \#include $<$i2c.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{i2c_8c_a64303230bf4843297e7ac37ac236ca04}{i2c\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize I2\+C1 module. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{i2c_8c_ac1b367a311ae77409adca5b6f0b8c925}{i2c\+\_\+request\+Byte}} (uint8\+\_\+t addr, uint8\+\_\+t request)
+\begin{DoxyCompactList}\small\item\em Transmits a request, then receives with a repeated S\+T\+A\+RT. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{i2c_8c_abcc7047231536290816fcb8a509f55fa}{i2c\+\_\+send\+Byte}} (uint8\+\_\+t addr, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Sends one byte of data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{i2c_8c_a1ad775e1d0ba1f8e61945346eeb8d972}{i2c\+\_\+send\+Bytes}} (uint8\+\_\+t addr, uint8\+\_\+t $\ast$data, size\+\_\+t data\+Len)
+\begin{DoxyCompactList}\small\item\em Sends multiple bytes of data. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{i2c_8c_aaec8e358d1068da09ccaa71f882e1e10}{i2c\+\_\+rec\+Byte}} (uint8\+\_\+t addr)
+\begin{DoxyCompactList}\small\item\em Receives a byte of data from a slave. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{i2c_8c_a8a9070f013864de6f23a47b785dc6018}{i2c\+\_\+rec\+Bytes}} (uint8\+\_\+t addr, size\+\_\+t data\+Len)
+\begin{DoxyCompactList}\small\item\em Receives multiple bytes of data from a slave. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Library for I2C on T\+M4\+C123\+G\+H6\+PM Microcontroller
+
+\begin{DoxyAuthor}{Author}
+Braedon Giblin \href{mailto:bgiblin@iastate.edu}{\texttt{ bgiblin@iastate.\+edu}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c_8c_a64303230bf4843297e7ac37ac236ca04}\label{i2c_8c_a64303230bf4843297e7ac37ac236ca04}} 
+\index{i2c.c@{i2c.c}!i2c\_init@{i2c\_init}}
+\index{i2c\_init@{i2c\_init}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_init()}{i2c\_init()}}
+{\footnotesize\ttfamily void i2c\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize I2\+C1 module. 
+
+Initializes I2\+C1 module as a master at standard speed. \mbox{\Hypertarget{i2c_8c_aaec8e358d1068da09ccaa71f882e1e10}\label{i2c_8c_aaec8e358d1068da09ccaa71f882e1e10}} 
+\index{i2c.c@{i2c.c}!i2c\_recByte@{i2c\_recByte}}
+\index{i2c\_recByte@{i2c\_recByte}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_recByte()}{i2c\_recByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+\_\+rec\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+
+
+Receives a byte of data from a slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+byte received 
+\end{DoxyReturn}
+\mbox{\Hypertarget{i2c_8c_a8a9070f013864de6f23a47b785dc6018}\label{i2c_8c_a8a9070f013864de6f23a47b785dc6018}} 
+\index{i2c.c@{i2c.c}!i2c\_recBytes@{i2c\_recBytes}}
+\index{i2c\_recBytes@{i2c\_recBytes}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_recBytes()}{i2c\_recBytes()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ i2c\+\_\+rec\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{size\+\_\+t}]{data\+Len }\end{DoxyParamCaption})}
+
+
+
+Receives multiple bytes of data from a slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address to read from \\
+\hline
+{\em data\+Len} & number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes received 
+\end{DoxyReturn}
+\mbox{\Hypertarget{i2c_8c_ac1b367a311ae77409adca5b6f0b8c925}\label{i2c_8c_ac1b367a311ae77409adca5b6f0b8c925}} 
+\index{i2c.c@{i2c.c}!i2c\_requestByte@{i2c\_requestByte}}
+\index{i2c\_requestByte@{i2c\_requestByte}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_requestByte()}{i2c\_requestByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t i2c\+\_\+request\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{request }\end{DoxyParamCaption})}
+
+
+
+Transmits a request, then receives with a repeated S\+T\+A\+RT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address to request from \\
+\hline
+{\em request} & Request byte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{i2c_8c_abcc7047231536290816fcb8a509f55fa}\label{i2c_8c_abcc7047231536290816fcb8a509f55fa}} 
+\index{i2c.c@{i2c.c}!i2c\_sendByte@{i2c\_sendByte}}
+\index{i2c\_sendByte@{i2c\_sendByte}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_sendByte()}{i2c\_sendByte()}}
+{\footnotesize\ttfamily size\+\_\+t i2c\+\_\+send\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Sends one byte of data. 
+
+Automatically sends start and stop bits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & 7 bit address to send data to \\
+\hline
+{\em data} & Byte of data to transmit \\
+\hline
+{\em send\+Stop} & Whether or not to send a stop sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes sent (1 if successful, else 0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{i2c_8c_a1ad775e1d0ba1f8e61945346eeb8d972}\label{i2c_8c_a1ad775e1d0ba1f8e61945346eeb8d972}} 
+\index{i2c.c@{i2c.c}!i2c\_sendBytes@{i2c\_sendBytes}}
+\index{i2c\_sendBytes@{i2c\_sendBytes}!i2c.c@{i2c.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_sendBytes()}{i2c\_sendBytes()}}
+{\footnotesize\ttfamily size\+\_\+t i2c\+\_\+send\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{size\+\_\+t}]{data\+Len }\end{DoxyParamCaption})}
+
+
+
+Sends multiple bytes of data. 
+
+Automatically sends start and stop bits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & 7 bit address to send data to \\
+\hline
+{\em byte} & Byte of data to transmit \\
+\hline
+{\em data\+Len} & Number of data bits to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes sent (if successful, should match data\+Len 
+\end{DoxyReturn}

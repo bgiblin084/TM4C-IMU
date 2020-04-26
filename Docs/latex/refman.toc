@@ -1,0 +1,69 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Data Structure Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Data Structures}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Data Structure Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}acc\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}calib\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{6}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}imu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}info\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{6}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{6}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}mag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{7}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{7}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Field Documentation}{7}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}heading}{7}{subsubsection.3.4.2.1}%
+\contentsline {chapter}{\numberline {4}File Documentation}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{9}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{9}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}i2c\_init()}{10}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}i2c\_recByte()}{10}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}i2c\_recBytes()}{10}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}i2c\_requestByte()}{10}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}i2c\_sendByte()}{12}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}i2c\_sendBytes()}{12}{subsubsection.4.1.2.6}%
+\contentsline {section}{\numberline {4.2}i2c.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{13}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{13}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Function Documentation}{13}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}i2c\_init()}{13}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}i2c\_recByte()}{13}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}i2c\_recBytes()}{14}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}i2c\_requestByte()}{14}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}i2c\_sendByte()}{14}{subsubsection.4.2.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.2.6}i2c\_sendBytes()}{15}{subsubsection.4.2.2.6}%
+\contentsline {section}{\numberline {4.3}imu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c File Reference}{15}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{16}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Function Documentation}{16}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}imu\_connected()}{16}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}imu\_getAcc()}{17}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}imu\_getChipInfo()}{17}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}imu\_getMag()}{17}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}imu\_getStatus()}{17}{subsubsection.4.3.2.5}%
+\contentsline {subsubsection}{\numberline {4.3.2.6}imu\_getTemp()}{18}{subsubsection.4.3.2.6}%
+\contentsline {subsubsection}{\numberline {4.3.2.7}imu\_readRegByte()}{18}{subsubsection.4.3.2.7}%
+\contentsline {subsubsection}{\numberline {4.3.2.8}imu\_readRegBytes()}{19}{subsubsection.4.3.2.8}%
+\contentsline {subsubsection}{\numberline {4.3.2.9}imu\_reset()}{19}{subsubsection.4.3.2.9}%
+\contentsline {subsubsection}{\numberline {4.3.2.10}imu\_setDefaultUnits()}{19}{subsubsection.4.3.2.10}%
+\contentsline {subsubsection}{\numberline {4.3.2.11}imu\_setMode()}{20}{subsubsection.4.3.2.11}%
+\contentsline {subsubsection}{\numberline {4.3.2.12}imu\_writeReg()}{20}{subsubsection.4.3.2.12}%
+\contentsline {section}{\numberline {4.4}imu.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{20}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Enumeration Type Documentation}{23}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}imu\_mode\_t}{23}{subsubsection.4.4.2.1}%
+\contentsline {subsection}{\numberline {4.4.3}Function Documentation}{23}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}imu\_connected()}{23}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}imu\_getAcc()}{23}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}imu\_getChipInfo()}{24}{subsubsection.4.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}imu\_getLinAcc()}{24}{subsubsection.4.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.4.3.5}imu\_getMag()}{24}{subsubsection.4.4.3.5}%
+\contentsline {subsubsection}{\numberline {4.4.3.6}imu\_getStatus()}{24}{subsubsection.4.4.3.6}%
+\contentsline {subsubsection}{\numberline {4.4.3.7}imu\_getTemp()}{25}{subsubsection.4.4.3.7}%
+\contentsline {subsubsection}{\numberline {4.4.3.8}imu\_readRegByte()}{25}{subsubsection.4.4.3.8}%
+\contentsline {subsubsection}{\numberline {4.4.3.9}imu\_readRegBytes()}{25}{subsubsection.4.4.3.9}%
+\contentsline {subsubsection}{\numberline {4.4.3.10}imu\_reset()}{26}{subsubsection.4.4.3.10}%
+\contentsline {subsubsection}{\numberline {4.4.3.11}imu\_setDefaultUnits()}{26}{subsubsection.4.4.3.11}%
+\contentsline {subsubsection}{\numberline {4.4.3.12}imu\_setMode()}{26}{subsubsection.4.4.3.12}%
+\contentsline {subsubsection}{\numberline {4.4.3.13}imu\_writeReg()}{26}{subsubsection.4.4.3.13}%
+\contentsline {chapter}{Index}{27}{section*.12}%

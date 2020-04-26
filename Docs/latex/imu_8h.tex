@@ -1,0 +1,512 @@
+\hypertarget{imu_8h}{}\doxysection{imu.\+h File Reference}
+\label{imu_8h}\index{imu.h@{imu.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$inc/tm4c123gh6pm.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcalib__t}{calib\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Calibration status. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structmag__t}{mag\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Magnetometer data. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structacc__t}{acc\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Accelerometer data. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structimu__info__t}{imu\+\_\+info\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em I\+MU Info packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{imu_8h_ac3cdd930d950b35e2041e394d5f44693}\label{imu_8h_ac3cdd930d950b35e2041e394d5f44693}} 
+\#define \mbox{\hyperlink{imu_8h_ac3cdd930d950b35e2041e394d5f44693}{B\+N\+O055\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+A}}~(0x28)
+\begin{DoxyCompactList}\small\item\em B\+N\+O055 Address A. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{imu_8h_aa141fc6fa09b855e6bda7e792bf54e21}\label{imu_8h_aa141fc6fa09b855e6bda7e792bf54e21}} 
+\#define \mbox{\hyperlink{imu_8h_aa141fc6fa09b855e6bda7e792bf54e21}{B\+N\+O055\+\_\+\+A\+D\+D\+R\+E\+S\+S\+\_\+B}}~(0x29)
+\begin{DoxyCompactList}\small\item\em B\+N\+O055 Address B. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{imu_8h_a5d61e3776e3b3017ed5e2d84ed9ec578}\label{imu_8h_a5d61e3776e3b3017ed5e2d84ed9ec578}} 
+\#define \mbox{\hyperlink{imu_8h_a5d61e3776e3b3017ed5e2d84ed9ec578}{B\+N\+O055\+\_\+\+ID}}~(0x\+A0)
+\begin{DoxyCompactList}\small\item\em B\+N\+O055 ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{imu_8h_a71139823e340d0361327078b070578a1}\label{imu_8h_a71139823e340d0361327078b070578a1}} 
+\#define {\bfseries I\+M\+U\+\_\+\+C\+H\+I\+P\+\_\+\+ID}~0x00
+\item 
+\mbox{\Hypertarget{imu_8h_a315b771c37757b691ccd522788627bd4}\label{imu_8h_a315b771c37757b691ccd522788627bd4}} 
+\#define {\bfseries I\+M\+U\+\_\+\+A\+C\+C\+\_\+\+ID}~0x01
+\item 
+\mbox{\Hypertarget{imu_8h_a510df6470fc71ad6039201a495cf2a49}\label{imu_8h_a510df6470fc71ad6039201a495cf2a49}} 
+\#define {\bfseries I\+M\+U\+\_\+\+M\+A\+G\+\_\+\+ID}~0x02
+\item 
+\mbox{\Hypertarget{imu_8h_a56c9a67f2a4417a94892f5b79d10c37c}\label{imu_8h_a56c9a67f2a4417a94892f5b79d10c37c}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+Y\+R\+\_\+\+I\+D\+\_\+R}~0x03
+\item 
+\mbox{\Hypertarget{imu_8h_ad0e0053006592b89d3b27e9b8aaec07e}\label{imu_8h_ad0e0053006592b89d3b27e9b8aaec07e}} 
+\#define {\bfseries I\+M\+U\+\_\+\+S\+W\+\_\+\+R\+E\+V\+\_\+\+M\+SB}~0x04
+\item 
+\mbox{\Hypertarget{imu_8h_a58bab69768733c77c1144a6ec56a7040}\label{imu_8h_a58bab69768733c77c1144a6ec56a7040}} 
+\#define {\bfseries I\+M\+U\+\_\+\+S\+W\+\_\+\+R\+E\+V\+\_\+\+L\+SB}~0x05
+\item 
+\mbox{\Hypertarget{imu_8h_a2e4098dff3852270beffb44be1cf6229}\label{imu_8h_a2e4098dff3852270beffb44be1cf6229}} 
+\#define {\bfseries I\+M\+U\+\_\+\+B\+L\+\_\+\+V\+E\+R\+\_\+R}~0x06
+\item 
+\mbox{\Hypertarget{imu_8h_a2d8141a37c6799bcda6f3f1d14c6571a}\label{imu_8h_a2d8141a37c6799bcda6f3f1d14c6571a}} 
+\#define {\bfseries I\+M\+U\+\_\+\+P\+A\+G\+E\+\_\+\+ID}~0x07
+\item 
+\mbox{\Hypertarget{imu_8h_ac2781182c70435ae57ba5e7ef386010a}\label{imu_8h_ac2781182c70435ae57ba5e7ef386010a}} 
+\#define {\bfseries I\+M\+U\+\_\+\+A\+C\+C\+\_\+\+D\+A\+T\+A\+X\+\_\+\+L\+SB}~0x08
+\item 
+\mbox{\Hypertarget{imu_8h_a92d548aeb9eff3cd1820e1736b0080b1}\label{imu_8h_a92d548aeb9eff3cd1820e1736b0080b1}} 
+\#define {\bfseries I\+M\+U\+\_\+\+A\+C\+C\+\_\+\+D\+A\+T\+A\+X\+\_\+\+M\+SB}~0x09
+\item 
+\mbox{\Hypertarget{imu_8h_a8a8f17cf78cc38274691fc98958ea409}\label{imu_8h_a8a8f17cf78cc38274691fc98958ea409}} 
+\#define {\bfseries I\+M\+U\+\_\+\+A\+C\+C\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+L\+SB}~0x0A
+\item 
+\mbox{\Hypertarget{imu_8h_a5399f0dc5f4e624b2ae25939d6aae685}\label{imu_8h_a5399f0dc5f4e624b2ae25939d6aae685}} 
+\#define {\bfseries I\+M\+U\+\_\+\+A\+C\+C\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+M\+SB}~0x0B
+\item 
+\mbox{\Hypertarget{imu_8h_a43c333a56dc2bf7cbb6178ffafdb2c4f}\label{imu_8h_a43c333a56dc2bf7cbb6178ffafdb2c4f}} 
+\#define {\bfseries I\+M\+U\+\_\+\+A\+C\+C\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+L\+SB}~0x0C
+\item 
+\mbox{\Hypertarget{imu_8h_a2e18312a69e291c0a811da7b36909619}\label{imu_8h_a2e18312a69e291c0a811da7b36909619}} 
+\#define {\bfseries I\+M\+U\+\_\+\+A\+C\+C\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+M\+SB}~0x0D
+\item 
+\mbox{\Hypertarget{imu_8h_ae090e8cfad70611f997728e0f94b19ef}\label{imu_8h_ae090e8cfad70611f997728e0f94b19ef}} 
+\#define {\bfseries I\+M\+U\+\_\+\+M\+A\+G\+\_\+\+D\+A\+T\+A\+X\+\_\+\+L\+SB}~0x0E
+\item 
+\mbox{\Hypertarget{imu_8h_a7a6ef0deb52930cde3a2ccc24af73311}\label{imu_8h_a7a6ef0deb52930cde3a2ccc24af73311}} 
+\#define {\bfseries I\+M\+U\+\_\+\+M\+A\+G\+\_\+\+D\+A\+T\+A\+X\+\_\+\+M\+SB}~0x0F
+\item 
+\mbox{\Hypertarget{imu_8h_ab3319da00ef57e49ca553f07d5b4dd62}\label{imu_8h_ab3319da00ef57e49ca553f07d5b4dd62}} 
+\#define {\bfseries I\+M\+U\+\_\+\+M\+A\+G\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+L\+SB}~0x10
+\item 
+\mbox{\Hypertarget{imu_8h_a90b39fb6fce4e18c0de077f79f5fd65b}\label{imu_8h_a90b39fb6fce4e18c0de077f79f5fd65b}} 
+\#define {\bfseries I\+M\+U\+\_\+\+M\+A\+G\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+M\+SB}~0x11
+\item 
+\mbox{\Hypertarget{imu_8h_ade2c9c65fd0f7e7b34a973777e498285}\label{imu_8h_ade2c9c65fd0f7e7b34a973777e498285}} 
+\#define {\bfseries I\+M\+U\+\_\+\+M\+A\+G\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+L\+SB}~0x12
+\item 
+\mbox{\Hypertarget{imu_8h_aad9783e3f8a0c524607f63f53546186a}\label{imu_8h_aad9783e3f8a0c524607f63f53546186a}} 
+\#define {\bfseries I\+M\+U\+\_\+\+M\+A\+G\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+M\+SB}~0x13
+\item 
+\mbox{\Hypertarget{imu_8h_a3f9451c4c2bb4014750001dacfabf152}\label{imu_8h_a3f9451c4c2bb4014750001dacfabf152}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+Y\+R\+\_\+\+D\+A\+T\+A\+X\+\_\+\+L\+SB}~0x14
+\item 
+\mbox{\Hypertarget{imu_8h_a4e978aa05d87e73b33aa2fe9fdc6cb67}\label{imu_8h_a4e978aa05d87e73b33aa2fe9fdc6cb67}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+Y\+R\+\_\+\+D\+A\+T\+A\+X\+\_\+\+M\+SB}~0x15
+\item 
+\mbox{\Hypertarget{imu_8h_ab82a153c397a120e46a6c6129588e965}\label{imu_8h_ab82a153c397a120e46a6c6129588e965}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+Y\+R\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+L\+SB}~0x16
+\item 
+\mbox{\Hypertarget{imu_8h_a77da9e70d4f85637ba4001247f5acea1}\label{imu_8h_a77da9e70d4f85637ba4001247f5acea1}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+Y\+R\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+M\+SB}~0x17
+\item 
+\mbox{\Hypertarget{imu_8h_a97c1cfe0a63a62376722d5a4bc2b9730}\label{imu_8h_a97c1cfe0a63a62376722d5a4bc2b9730}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+Y\+R\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+L\+SB}~0x18
+\item 
+\mbox{\Hypertarget{imu_8h_af31b2a4b9a3f80cb9bffe2cc1850d897}\label{imu_8h_af31b2a4b9a3f80cb9bffe2cc1850d897}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+Y\+R\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+M\+SB}~0x19
+\item 
+\mbox{\Hypertarget{imu_8h_af5ee3bbdd6ddb87d3c8cf5625806c431}\label{imu_8h_af5ee3bbdd6ddb87d3c8cf5625806c431}} 
+\#define {\bfseries I\+M\+U\+\_\+\+E\+U\+L\+\_\+\+H\+E\+A\+D\+\_\+\+L\+SB}~0x1A
+\item 
+\mbox{\Hypertarget{imu_8h_ac8772a1f40ff0f361835332aa8d51aa9}\label{imu_8h_ac8772a1f40ff0f361835332aa8d51aa9}} 
+\#define {\bfseries I\+M\+U\+\_\+\+E\+U\+L\+\_\+\+H\+E\+A\+D\+\_\+\+M\+SB}~0x1B
+\item 
+\mbox{\Hypertarget{imu_8h_ac709c6f76a56c5edff77521572ad498f}\label{imu_8h_ac709c6f76a56c5edff77521572ad498f}} 
+\#define {\bfseries I\+M\+U\+\_\+\+E\+U\+L\+\_\+\+R\+O\+L\+L\+\_\+\+L\+SB}~0x1C
+\item 
+\mbox{\Hypertarget{imu_8h_a7fdff294de2a666d766fd351f526e808}\label{imu_8h_a7fdff294de2a666d766fd351f526e808}} 
+\#define {\bfseries I\+M\+U\+\_\+\+E\+U\+L\+\_\+\+R\+O\+L\+L\+\_\+\+M\+SB}~0x1D
+\item 
+\mbox{\Hypertarget{imu_8h_adf8cac82a49326a7c01426ba7a33ed18}\label{imu_8h_adf8cac82a49326a7c01426ba7a33ed18}} 
+\#define {\bfseries I\+M\+U\+\_\+\+E\+U\+L\+\_\+\+P\+T\+C\+H\+\_\+\+L\+SB}~0x1E
+\item 
+\mbox{\Hypertarget{imu_8h_afd7b5e46205e35c19f54425567e8b5ab}\label{imu_8h_afd7b5e46205e35c19f54425567e8b5ab}} 
+\#define {\bfseries I\+M\+U\+\_\+\+E\+U\+L\+\_\+\+P\+T\+C\+H\+\_\+\+M\+SB}~0x1F
+\item 
+\mbox{\Hypertarget{imu_8h_aaaf5afa72d1c1aa00f0283557c57a9f2}\label{imu_8h_aaaf5afa72d1c1aa00f0283557c57a9f2}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+W\+\_\+\+L\+SB}~0x20
+\item 
+\mbox{\Hypertarget{imu_8h_aad30aa7c2e0906cc56eed69e4bb9e275}\label{imu_8h_aad30aa7c2e0906cc56eed69e4bb9e275}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+W\+\_\+\+M\+SB}~0x21
+\item 
+\mbox{\Hypertarget{imu_8h_a54b56476c626d6b7ff20359c67509216}\label{imu_8h_a54b56476c626d6b7ff20359c67509216}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+X\+\_\+\+L\+SB}~0x22
+\item 
+\mbox{\Hypertarget{imu_8h_a9050907cbf8320a106812dae4f17c37f}\label{imu_8h_a9050907cbf8320a106812dae4f17c37f}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+X\+\_\+\+M\+SB}~0x23
+\item 
+\mbox{\Hypertarget{imu_8h_a80e8e951c1fc09173fe68ac1464e9cf4}\label{imu_8h_a80e8e951c1fc09173fe68ac1464e9cf4}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+L\+SB}~0x24
+\item 
+\mbox{\Hypertarget{imu_8h_a2d8397b986bbbeb78381bec5cff50dc5}\label{imu_8h_a2d8397b986bbbeb78381bec5cff50dc5}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+M\+SB}~0x25
+\item 
+\mbox{\Hypertarget{imu_8h_a5020bfc91e430856db8cada05d2c7a55}\label{imu_8h_a5020bfc91e430856db8cada05d2c7a55}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+L\+SB}~0x26
+\item 
+\mbox{\Hypertarget{imu_8h_a4c2170984ea41944c113a6ecc35d622f}\label{imu_8h_a4c2170984ea41944c113a6ecc35d622f}} 
+\#define {\bfseries I\+M\+U\+\_\+\+Q\+U\+A\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+M\+SB}~0x27
+\item 
+\mbox{\Hypertarget{imu_8h_a00f446d1927df50344d24f0e37105780}\label{imu_8h_a00f446d1927df50344d24f0e37105780}} 
+\#define {\bfseries I\+M\+U\+\_\+\+L\+I\+A\+\_\+\+D\+A\+T\+A\+X\+\_\+\+L\+SB}~0x28
+\item 
+\mbox{\Hypertarget{imu_8h_a9d0cbd9b16dd51def79340d2d7594c60}\label{imu_8h_a9d0cbd9b16dd51def79340d2d7594c60}} 
+\#define {\bfseries I\+M\+U\+\_\+\+L\+I\+A\+\_\+\+D\+A\+T\+A\+X\+\_\+\+M\+SB}~0x29
+\item 
+\mbox{\Hypertarget{imu_8h_acd5004278a51907683ccc378c8801fe6}\label{imu_8h_acd5004278a51907683ccc378c8801fe6}} 
+\#define {\bfseries I\+M\+U\+\_\+\+L\+I\+A\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+L\+SB}~0x2A
+\item 
+\mbox{\Hypertarget{imu_8h_aac27ebab4a16340e3919efaaac85b518}\label{imu_8h_aac27ebab4a16340e3919efaaac85b518}} 
+\#define {\bfseries I\+M\+U\+\_\+\+L\+I\+A\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+M\+SB}~0x2B
+\item 
+\mbox{\Hypertarget{imu_8h_a41be9a0ce31eadc73f0bfb1783b01f52}\label{imu_8h_a41be9a0ce31eadc73f0bfb1783b01f52}} 
+\#define {\bfseries I\+M\+U\+\_\+\+L\+I\+A\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+L\+SB}~0x2C
+\item 
+\mbox{\Hypertarget{imu_8h_a143c4e085e156248f293c79ab0877fe7}\label{imu_8h_a143c4e085e156248f293c79ab0877fe7}} 
+\#define {\bfseries I\+M\+U\+\_\+\+L\+I\+A\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+M\+SB}~0x2D
+\item 
+\mbox{\Hypertarget{imu_8h_ae520262dd05db4fe034b34436286a030}\label{imu_8h_ae520262dd05db4fe034b34436286a030}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+R\+V\+\_\+\+D\+A\+T\+A\+X\+\_\+\+L\+SB}~0x2E
+\item 
+\mbox{\Hypertarget{imu_8h_a987263db74932677f2fbe31a0011b592}\label{imu_8h_a987263db74932677f2fbe31a0011b592}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+R\+V\+\_\+\+D\+A\+T\+A\+X\+\_\+\+M\+SB}~0x2F
+\item 
+\mbox{\Hypertarget{imu_8h_a513dd478668059fe8feaa374dedae66a}\label{imu_8h_a513dd478668059fe8feaa374dedae66a}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+R\+V\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+L\+SB}~0x30
+\item 
+\mbox{\Hypertarget{imu_8h_aacf5e6af5f61a650284dba1953b8f62c}\label{imu_8h_aacf5e6af5f61a650284dba1953b8f62c}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+R\+V\+\_\+\+D\+A\+T\+A\+Y\+\_\+\+M\+SB}~0x31
+\item 
+\mbox{\Hypertarget{imu_8h_ab1f0d5ba4c7ddbc71949a34023ec3491}\label{imu_8h_ab1f0d5ba4c7ddbc71949a34023ec3491}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+R\+V\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+L\+SB}~0x32
+\item 
+\mbox{\Hypertarget{imu_8h_a0fa72f91f961e1a6655f04960dfdcffd}\label{imu_8h_a0fa72f91f961e1a6655f04960dfdcffd}} 
+\#define {\bfseries I\+M\+U\+\_\+\+G\+R\+V\+\_\+\+D\+A\+T\+A\+Z\+\_\+\+M\+SB}~0x33
+\item 
+\mbox{\Hypertarget{imu_8h_ae27069fc4bd6e33d5858f75cb379c439}\label{imu_8h_ae27069fc4bd6e33d5858f75cb379c439}} 
+\#define {\bfseries I\+M\+U\+\_\+\+T\+E\+MP}~0x34
+\item 
+\mbox{\Hypertarget{imu_8h_a7058d8219c295e9a446258d204dc3198}\label{imu_8h_a7058d8219c295e9a446258d204dc3198}} 
+\#define {\bfseries I\+M\+U\+\_\+\+C\+A\+L\+I\+B\+\_\+\+S\+T\+AT}~0x35
+\item 
+\mbox{\Hypertarget{imu_8h_aeeff555925ed42e6650c330adab26629}\label{imu_8h_aeeff555925ed42e6650c330adab26629}} 
+\#define {\bfseries I\+M\+U\+\_\+\+S\+Y\+S\+\_\+\+S\+T\+A\+T\+US}~0x39
+\item 
+\mbox{\Hypertarget{imu_8h_ac82c68eb9e8903f854726667365e6293}\label{imu_8h_ac82c68eb9e8903f854726667365e6293}} 
+\#define {\bfseries I\+M\+U\+\_\+\+U\+N\+I\+T\+\_\+\+S\+EL}~0x3B
+\item 
+\mbox{\Hypertarget{imu_8h_ab0810c91e929300e5f522dced233f292}\label{imu_8h_ab0810c91e929300e5f522dced233f292}} 
+\#define {\bfseries I\+M\+U\+\_\+\+O\+P\+R\+\_\+\+M\+O\+DE}~0x3D
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}{imu\+\_\+mode\+\_\+t}} \{ \newline
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a702582f7f825ca83bdb076b15b4c0fc2}{C\+O\+N\+F\+IG}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aaacc07fb8fb8b84df1778b096392eb62}{A\+C\+C\+O\+N\+LY}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734ad3eb68e1cce5458fda711fc73111857c}{M\+A\+G\+O\+N\+LY}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a0091221945d38ab05c0ff99110fec1d7}{G\+Y\+R\+O\+O\+N\+LY}}, 
+\newline
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a1874d1db5cc938b4b2d03afdc326a833}{A\+C\+C\+M\+AG}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aafbb00697a54d63751a5f8de14d7f1e7}{A\+C\+C\+G\+Y\+RO}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aa823a4d370de711b2a938134b5b2c26c}{M\+A\+G\+G\+Y\+RO}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a243d27757dcc7d74ecdbb5aeba6b5cdb}{A\+MG}}, 
+\newline
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734ae0aac3b1d47277f0d7593bda2847502a}{I\+MU}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a3816a21235046441a516c9435b144aee}{C\+O\+M\+P\+A\+SS}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a1f60fbcd844d4b46b9aa779d247d1612}{M4G}}, 
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a46e1f3d0d501cc27c051110b9310f903}{N\+D\+O\+F\+\_\+\+F\+M\+C\+\_\+\+O\+FF}}, 
+\newline
+\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a6eb9c104b0c2bfb6f9e77e5f4b1210bd}{N\+D\+OF}}
+ \}
+\begin{DoxyCompactList}\small\item\em I\+MU Operating Modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{imu_8h_aee92580b45484a763ef6f507ed59e31a}\label{imu_8h_aee92580b45484a763ef6f507ed59e31a}} 
+void \mbox{\hyperlink{imu_8h_aee92580b45484a763ef6f507ed59e31a}{imu\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize I\+MU. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{imu_8h_a399198eab0d0118f45bbc8d567108712}{imu\+\_\+connected}} ()
+\begin{DoxyCompactList}\small\item\em Check if I\+MU is connected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{imu_8h_af3fcba203f7a3d7d2940218e576f098b}{imu\+\_\+reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the I\+MU. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{imu_8h_ae459244d8949fab63ff4ede3f0dc6ce1}{imu\+\_\+get\+Temp}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current temperature reading from I\+MU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmag__t}{mag\+\_\+t}} $\ast$ \mbox{\hyperlink{imu_8h_a017157849284abfa5ff0f9fe40027707}{imu\+\_\+get\+Mag}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current magnetometer data from the I\+MU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structacc__t}{acc\+\_\+t}} $\ast$ \mbox{\hyperlink{imu_8h_aa5173c4d1e1cddae34fb3306a72c8548}{imu\+\_\+get\+Acc}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current acceleration data from the I\+MU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structacc__t}{acc\+\_\+t}} $\ast$ \mbox{\hyperlink{imu_8h_a58292bbc37706a4036dbc14efa9a39db}{imu\+\_\+get\+Lin\+Acc}} ()
+\begin{DoxyCompactList}\small\item\em Gets the linear acceleration data from I\+MU. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{imu_8h_a5c9e4e3587441237a9eb498bfadd8268}{imu\+\_\+get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current status from the I\+MU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{imu_8h_ae65086c0f29bb41fe43bf35cab4b5d31}{imu\+\_\+write\+Reg}} (uint8\+\_\+t reg\+Addr, uint8\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Writes to a specified register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{imu_8h_a1773be493dae6003e8f7396f10b73fc2}{imu\+\_\+read\+Reg\+Byte}} (uint8\+\_\+t reg\+Addr)
+\begin{DoxyCompactList}\small\item\em Reads a byte from the I\+MU. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{imu_8h_aae7e5e330135b1a750ef474f7bbf6ef1}{imu\+\_\+read\+Reg\+Bytes}} (uint8\+\_\+t reg\+Addr, size\+\_\+t data\+Len)
+\begin{DoxyCompactList}\small\item\em Reads a multiple bytes from the I\+MU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structimu__info__t}{imu\+\_\+info\+\_\+t}} $\ast$ \mbox{\hyperlink{imu_8h_aa08ef177146dc603e69ec3ca112d0b04}{imu\+\_\+get\+Chip\+Info}} ()
+\begin{DoxyCompactList}\small\item\em gets the current Chip Info. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{imu_8h_a4a977f192aab1c6b5c027772419da374}{imu\+\_\+set\+Default\+Units}} ()
+\begin{DoxyCompactList}\small\item\em Sets the default units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{imu_8h_a9e418a865ebc5f15c9025ba0ce4d7dc8}{imu\+\_\+set\+Mode}} (\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}{imu\+\_\+mode\+\_\+t}} mode)
+\begin{DoxyCompactList}\small\item\em sets the mode of the I\+MU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver for B\+N\+O055 I\+MU.
+
+\begin{DoxyAuthor}{Author}
+Braedon Giblin \href{mailto:bgiblin@iastate.edu}{\texttt{ bgiblin@iastate.\+edu}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}} 
+\index{imu.h@{imu.h}!imu\_mode\_t@{imu\_mode\_t}}
+\index{imu\_mode\_t@{imu\_mode\_t}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_mode\_t}{imu\_mode\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}{imu\+\_\+mode\+\_\+t}}}
+
+
+
+I\+MU Operating Modes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONFIG@{CONFIG}!imu.h@{imu.h}}\index{imu.h@{imu.h}!CONFIG@{CONFIG}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a702582f7f825ca83bdb076b15b4c0fc2}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a702582f7f825ca83bdb076b15b4c0fc2}} 
+C\+O\+N\+F\+IG&Config mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACCONLY@{ACCONLY}!imu.h@{imu.h}}\index{imu.h@{imu.h}!ACCONLY@{ACCONLY}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aaacc07fb8fb8b84df1778b096392eb62}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aaacc07fb8fb8b84df1778b096392eb62}} 
+A\+C\+C\+O\+N\+LY&Non-\/fusion Accelerometer only mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAGONLY@{MAGONLY}!imu.h@{imu.h}}\index{imu.h@{imu.h}!MAGONLY@{MAGONLY}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734ad3eb68e1cce5458fda711fc73111857c}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734ad3eb68e1cce5458fda711fc73111857c}} 
+M\+A\+G\+O\+N\+LY&Non-\/fusion Magnetometer only mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GYROONLY@{GYROONLY}!imu.h@{imu.h}}\index{imu.h@{imu.h}!GYROONLY@{GYROONLY}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a0091221945d38ab05c0ff99110fec1d7}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a0091221945d38ab05c0ff99110fec1d7}} 
+G\+Y\+R\+O\+O\+N\+LY&Non-\/fusion Gyroscope only mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACCMAG@{ACCMAG}!imu.h@{imu.h}}\index{imu.h@{imu.h}!ACCMAG@{ACCMAG}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a1874d1db5cc938b4b2d03afdc326a833}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a1874d1db5cc938b4b2d03afdc326a833}} 
+A\+C\+C\+M\+AG&Non-\/fusion Accelerometer and Magnetometer mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACCGYRO@{ACCGYRO}!imu.h@{imu.h}}\index{imu.h@{imu.h}!ACCGYRO@{ACCGYRO}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aafbb00697a54d63751a5f8de14d7f1e7}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aafbb00697a54d63751a5f8de14d7f1e7}} 
+A\+C\+C\+G\+Y\+RO&Non-\/fusion Accelerometer and Gyrosocpe mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAGGYRO@{MAGGYRO}!imu.h@{imu.h}}\index{imu.h@{imu.h}!MAGGYRO@{MAGGYRO}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aa823a4d370de711b2a938134b5b2c26c}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734aa823a4d370de711b2a938134b5b2c26c}} 
+M\+A\+G\+G\+Y\+RO&Non-\/fusion Gyroscope and Magnetometer mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AMG@{AMG}!imu.h@{imu.h}}\index{imu.h@{imu.h}!AMG@{AMG}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a243d27757dcc7d74ecdbb5aeba6b5cdb}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a243d27757dcc7d74ecdbb5aeba6b5cdb}} 
+A\+MG&Non-\/fusion Accelerometer, Gyroscope, and Magnetometer mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMU@{IMU}!imu.h@{imu.h}}\index{imu.h@{imu.h}!IMU@{IMU}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734ae0aac3b1d47277f0d7593bda2847502a}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734ae0aac3b1d47277f0d7593bda2847502a}} 
+I\+MU&Fusion Accelerometer and Gyrosocope -- relative. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPASS@{COMPASS}!imu.h@{imu.h}}\index{imu.h@{imu.h}!COMPASS@{COMPASS}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a3816a21235046441a516c9435b144aee}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a3816a21235046441a516c9435b144aee}} 
+C\+O\+M\+P\+A\+SS&Fusion Accelerometer and Magnetometer -- absolute. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M4G@{M4G}!imu.h@{imu.h}}\index{imu.h@{imu.h}!M4G@{M4G}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a1f60fbcd844d4b46b9aa779d247d1612}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a1f60fbcd844d4b46b9aa779d247d1612}} 
+M4G&Fusion Accelerometer and magnetometer -- relative. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NDOF\_FMC\_OFF@{NDOF\_FMC\_OFF}!imu.h@{imu.h}}\index{imu.h@{imu.h}!NDOF\_FMC\_OFF@{NDOF\_FMC\_OFF}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a46e1f3d0d501cc27c051110b9310f903}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a46e1f3d0d501cc27c051110b9310f903}} 
+N\+D\+O\+F\+\_\+\+F\+M\+C\+\_\+\+O\+FF&Fusion, all devices, no fast calibration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NDOF@{NDOF}!imu.h@{imu.h}}\index{imu.h@{imu.h}!NDOF@{NDOF}}}\mbox{\Hypertarget{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a6eb9c104b0c2bfb6f9e77e5f4b1210bd}\label{imu_8h_a916c14a4cdad4e7ceebab3e02021f734a6eb9c104b0c2bfb6f9e77e5f4b1210bd}} 
+N\+D\+OF&Fusion, all devices. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{imu_8h_a399198eab0d0118f45bbc8d567108712}\label{imu_8h_a399198eab0d0118f45bbc8d567108712}} 
+\index{imu.h@{imu.h}!imu\_connected@{imu\_connected}}
+\index{imu\_connected@{imu\_connected}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_connected()}{imu\_connected()}}
+{\footnotesize\ttfamily bool imu\+\_\+connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if I\+MU is connected. 
+
+\begin{DoxyReturn}{Returns}
+True if connected, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_aa5173c4d1e1cddae34fb3306a72c8548}\label{imu_8h_aa5173c4d1e1cddae34fb3306a72c8548}} 
+\index{imu.h@{imu.h}!imu\_getAcc@{imu\_getAcc}}
+\index{imu\_getAcc@{imu\_getAcc}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_getAcc()}{imu\_getAcc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structacc__t}{acc\+\_\+t}}$\ast$ imu\+\_\+get\+Acc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current acceleration data from the I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+Accelerometer data packet 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_aa08ef177146dc603e69ec3ca112d0b04}\label{imu_8h_aa08ef177146dc603e69ec3ca112d0b04}} 
+\index{imu.h@{imu.h}!imu\_getChipInfo@{imu\_getChipInfo}}
+\index{imu\_getChipInfo@{imu\_getChipInfo}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_getChipInfo()}{imu\_getChipInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structimu__info__t}{imu\+\_\+info\+\_\+t}}$\ast$ imu\+\_\+get\+Chip\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the current Chip Info. 
+
+\begin{DoxyReturn}{Returns}
+Chip info packet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_a58292bbc37706a4036dbc14efa9a39db}\label{imu_8h_a58292bbc37706a4036dbc14efa9a39db}} 
+\index{imu.h@{imu.h}!imu\_getLinAcc@{imu\_getLinAcc}}
+\index{imu\_getLinAcc@{imu\_getLinAcc}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_getLinAcc()}{imu\_getLinAcc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structacc__t}{acc\+\_\+t}}$\ast$ imu\+\_\+get\+Lin\+Acc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the linear acceleration data from I\+MU. 
+
+I\+MU must be in Fusion mode to read this value.
+
+\begin{DoxyReturn}{Returns}
+linear acceration data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_a017157849284abfa5ff0f9fe40027707}\label{imu_8h_a017157849284abfa5ff0f9fe40027707}} 
+\index{imu.h@{imu.h}!imu\_getMag@{imu\_getMag}}
+\index{imu\_getMag@{imu\_getMag}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_getMag()}{imu\_getMag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmag__t}{mag\+\_\+t}}$\ast$ imu\+\_\+get\+Mag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current magnetometer data from the I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+Magnetometer data packet 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_a5c9e4e3587441237a9eb498bfadd8268}\label{imu_8h_a5c9e4e3587441237a9eb498bfadd8268}} 
+\index{imu.h@{imu.h}!imu\_getStatus@{imu\_getStatus}}
+\index{imu\_getStatus@{imu\_getStatus}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_getStatus()}{imu\_getStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current status from the I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+status. See data sheet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_ae459244d8949fab63ff4ede3f0dc6ce1}\label{imu_8h_ae459244d8949fab63ff4ede3f0dc6ce1}} 
+\index{imu.h@{imu.h}!imu\_getTemp@{imu\_getTemp}}
+\index{imu\_getTemp@{imu\_getTemp}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_getTemp()}{imu\_getTemp()}}
+{\footnotesize\ttfamily int imu\+\_\+get\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current temperature reading from I\+MU. 
+
+\begin{DoxyReturn}{Returns}
+Temperature in specified units (default fahrenheit) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_a1773be493dae6003e8f7396f10b73fc2}\label{imu_8h_a1773be493dae6003e8f7396f10b73fc2}} 
+\index{imu.h@{imu.h}!imu\_readRegByte@{imu\_readRegByte}}
+\index{imu\_readRegByte@{imu\_readRegByte}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_readRegByte()}{imu\_readRegByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t imu\+\_\+read\+Reg\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr }\end{DoxyParamCaption})}
+
+
+
+Reads a byte from the I\+MU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Address to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Byte read 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_aae7e5e330135b1a750ef474f7bbf6ef1}\label{imu_8h_aae7e5e330135b1a750ef474f7bbf6ef1}} 
+\index{imu.h@{imu.h}!imu\_readRegBytes@{imu\_readRegBytes}}
+\index{imu\_readRegBytes@{imu\_readRegBytes}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_readRegBytes()}{imu\_readRegBytes()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ imu\+\_\+read\+Reg\+Bytes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr,  }\item[{size\+\_\+t}]{data\+Len }\end{DoxyParamCaption})}
+
+
+
+Reads a multiple bytes from the I\+MU. 
+
+{\bfseries{N\+O\+TE}} This allocates memory. Allocated array {\bfseries{M\+U\+ST}} be freed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Address to begin read from \\
+\hline
+{\em data\+Len} & Number of bytes to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Byte array of bytes read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{imu_8h_af3fcba203f7a3d7d2940218e576f098b}\label{imu_8h_af3fcba203f7a3d7d2940218e576f098b}} 
+\index{imu.h@{imu.h}!imu\_reset@{imu\_reset}}
+\index{imu\_reset@{imu\_reset}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_reset()}{imu\_reset()}}
+{\footnotesize\ttfamily void imu\+\_\+reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the I\+MU. 
+
+Poll connected to wait until connected. \mbox{\Hypertarget{imu_8h_a4a977f192aab1c6b5c027772419da374}\label{imu_8h_a4a977f192aab1c6b5c027772419da374}} 
+\index{imu.h@{imu.h}!imu\_setDefaultUnits@{imu\_setDefaultUnits}}
+\index{imu\_setDefaultUnits@{imu\_setDefaultUnits}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_setDefaultUnits()}{imu\_setDefaultUnits()}}
+{\footnotesize\ttfamily void imu\+\_\+set\+Default\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the default units. 
+
+Default units are -\/ M/s$^\wedge$2, degrees, fahrenheit \mbox{\Hypertarget{imu_8h_a9e418a865ebc5f15c9025ba0ce4d7dc8}\label{imu_8h_a9e418a865ebc5f15c9025ba0ce4d7dc8}} 
+\index{imu.h@{imu.h}!imu\_setMode@{imu\_setMode}}
+\index{imu\_setMode@{imu\_setMode}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_setMode()}{imu\_setMode()}}
+{\footnotesize\ttfamily void imu\+\_\+set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{imu_8h_a916c14a4cdad4e7ceebab3e02021f734}{imu\+\_\+mode\+\_\+t}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+sets the mode of the I\+MU. 
+
+See imu\+\_\+mode\+\_\+t struct for different modes. \mbox{\Hypertarget{imu_8h_ae65086c0f29bb41fe43bf35cab4b5d31}\label{imu_8h_ae65086c0f29bb41fe43bf35cab4b5d31}} 
+\index{imu.h@{imu.h}!imu\_writeReg@{imu\_writeReg}}
+\index{imu\_writeReg@{imu\_writeReg}!imu.h@{imu.h}}
+\doxysubsubsection{\texorpdfstring{imu\_writeReg()}{imu\_writeReg()}}
+{\footnotesize\ttfamily void imu\+\_\+write\+Reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+Addr,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+
+
+Writes to a specified register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & Register address to write \\
+\hline
+{\em val} & Value to write \\
+\hline
+\end{DoxyParams}
