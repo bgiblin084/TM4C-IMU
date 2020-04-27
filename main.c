@@ -14,7 +14,8 @@ int main() {
     timer_init();
 //    oi_t* sensorData = oi_alloc();
 //    oi_init(sensorData);
-//    printf("%d\n", imu_readRegByte(IMU_OPR_MODE));
+
+
     imu_writeReg(IMU_OPR_MODE, NDOF);
     imu_setDefaultUnits();
 
@@ -67,6 +68,7 @@ void imu_move_distance(float dis, oi_t *sensor_data, int speed){
         v = v + (acc->magnitude * (t/1000000.0 - tLast/1000000.0));
         x = x + (v * (t/10000.0 - tLast/10000.0));
         free(acc);
+        tLast = t;
     }
     oi_setWheels(0, 0);
 }
