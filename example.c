@@ -3,7 +3,8 @@
  *
  * @author Braedon Giblin <bgiblin@iastate.edu>
  *
- * The purpose of this file is to serve as a basic example for IMU usage. 
+ * The purpose of this file is to serve as a basic example for IMU usage.
+ */
 
 #include "imu.h"
 #include "timer.h"
